@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
+import Card from './components/Card';
 
 import * as API from './utils/API';
 import AuthService from './utils/auth';
@@ -44,11 +45,13 @@ function App() {
         {/* wrap our entire app in context provider and provide userInfo state as value */}
         <UserInfoContext.Provider value={userInfo}>
           <Navbar />
+      
           <Switch>
             <Route exact path='/' component={SearchBooks} />
             <Route exact path='/saved' component={SavedBooks} />
             <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
           </Switch>
+          <Card />
         </UserInfoContext.Provider>
       </>
     </Router>
