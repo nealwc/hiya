@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Card, CardDeck, Row, Container } from 'react-bootstrap';
+import { Card, CardDeck, Row, Col, Container } from 'react-bootstrap';
 
 function cardRow() {
 //   // get username out of context object to display in nav
@@ -9,10 +9,11 @@ function cardRow() {
 
 return(
 <>
-<Container fluid="md">
+<Container fluid>
 <Row>
-<CardDeck>
-<Card border="primary" bg="dark" text="light">
+{/* <CardDeck> */}
+<Col>
+<Card border="primary" bg="dark" text="light" style={{width: "28rem", padding: "20px", margin: "20px"}}>
 <Card.Header>Username</Card.Header>
   <Card.Img variant="top" src="https://images.fineartamerica.com/images-medium-large-5/downtown-richmond-in-black-and-white-gordon-cain.jpg" />
   <Card.Body>
@@ -23,7 +24,9 @@ return(
     </Card.Text>
   </Card.Body>
 </Card>
-<Card border="primary" bg="dark" text="light">
+</Col>
+<Col>
+<Card border="primary" bg="dark" text="light" style={{width: "28rem", padding: "20px", margin: "20px"}}>
 <Card.Header>Username</Card.Header>
   <Card.Img variant="top" src="https://images.fineartamerica.com/images-medium-large-5/downtown-richmond-in-black-and-white-gordon-cain.jpg" />
   <Card.Body>
@@ -34,7 +37,9 @@ return(
     </Card.Text>
   </Card.Body>
 </Card>
-<Card border="primary" bg="dark" text="light">
+</Col>
+<Col>
+<Card border="primary" bg="dark" text="light" style={{width: "28rem", padding: "20px", margin: "20px"}}>
 <Card.Header>Username</Card.Header>
   <Card.Img variant="top" src="https://images.fineartamerica.com/images-medium-large-5/downtown-richmond-in-black-and-white-gordon-cain.jpg" />
   <Card.Body>
@@ -45,7 +50,8 @@ return(
     </Card.Text>
   </Card.Body>
 </Card>
-</CardDeck>
+</Col>
+{/* </CardDeck> */}
 </Row>
 </Container>
 </>
