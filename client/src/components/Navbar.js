@@ -1,12 +1,14 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
+import { Navbar, Nav, Container, Modal, Tab, Image } from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
-import Card from './Card';
+// import Card from './Card';
 
 import UserInfoContext from '../utils/UserInfoContext';
 import AuthService from '../utils/auth';
+
+// import Logo from './Photo/hiyadraft';
 
 function AppNavbar() {
   // set modal display state
@@ -16,22 +18,22 @@ function AppNavbar() {
 
   return (
     <>
-      <Navbar bg='dark' variant='dark' expand='lg'>
+      <Navbar bg='dark' variant="dark" expand='lg'>
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
-            hiya!
+          {/* <Image src={Logo} rounded /> */}
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>
-              <Nav.Link as={Link} to='/'>
-                Search For Books
-              </Nav.Link>
               {/* if user is logged in show saved books and logout */}
               {username ? (
                 <>
+                  <Nav.Link as={Link} to='/'>
+                    Create a Post
+                  </Nav.Link>
                   <Nav.Link as={Link} to='/saved'>
-                    See {username}'s Books
+                    {username}'s Saved Posts
                   </Nav.Link>
                   <Nav.Link onClick={AuthService.logout}>Logout</Nav.Link>
                 </>
