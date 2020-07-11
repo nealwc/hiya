@@ -8,7 +8,7 @@ import LoginForm from './LoginForm';
 import UserInfoContext from '../utils/UserInfoContext';
 import AuthService from '../utils/auth';
 
-// import Logo from '../..public/Photo/hiyadraft';
+// import Logo from './Photo/hiyadraft';
 
 function AppNavbar() {
   // set modal display state
@@ -21,7 +21,8 @@ function AppNavbar() {
       <Navbar bg='dark' variant="dark" expand='lg' sticky= "top">
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
-          {/* <Image src={Logo} rounded /> */}
+          HIYA
+          {/* <Navbar.Image src={Logo} rounded /> */}
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
@@ -33,7 +34,7 @@ function AppNavbar() {
                     Create a Post
                   </Nav.Link>
                   <Nav.Link as={Link} to='/saved'>
-                    {username}'s Saved Posts
+                    Saved Posts
                   </Nav.Link>
                   <Nav.Link onClick={AuthService.logout}>Logout</Nav.Link>
                 </>
