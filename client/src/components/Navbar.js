@@ -8,7 +8,7 @@ import LoginForm from './LoginForm';
 import UserInfoContext from '../utils/UserInfoContext';
 import AuthService from '../utils/auth';
 
-// import Logo from './Photo/hiyadraft';
+// import Logo from '../..public/Photo/hiyadraft';
 
 function AppNavbar() {
   // set modal display state
