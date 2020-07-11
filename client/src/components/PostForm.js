@@ -8,7 +8,8 @@ function PostForm() {
         <>
             <Container>
             <Card style={{margin: "25px"}}>
-            <Card.Header>Create a Post</Card.Header>
+            <Card.Header>Create a Post
+            </Card.Header>
             <Card.Body>
             <Form>
 

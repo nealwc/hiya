@@ -13,7 +13,7 @@ return(
 <Row>
 {/* <CardDeck> */}
 <Col>
-<Card border="primary" bg="dark" text="light" style={{width: "28rem", padding: "20px", margin: "20px"}}>
+<Card border="primary" bg="dark" text="light" style={{padding: "20px", margin: "20px"}}>
 <Card.Header>Username</Card.Header>
   <Card.Img variant="top" src="https://images.fineartamerica.com/images-medium-large-5/downtown-richmond-in-black-and-white-gordon-cain.jpg" />
   <Card.Body>
@@ -26,7 +26,7 @@ return(
 </Card>
 </Col>
 <Col>
-<Card border="primary" bg="dark" text="light" style={{width: "28rem", padding: "20px", margin: "20px"}}>
+<Card border="primary" bg="dark" text="light" style={{padding: "20px", margin: "20px"}}>
 <Card.Header>Username</Card.Header>
   <Card.Img variant="top" src="https://images.fineartamerica.com/images-medium-large-5/downtown-richmond-in-black-and-white-gordon-cain.jpg" />
   <Card.Body>
@@ -39,7 +39,7 @@ return(
 </Card>
 </Col>
 <Col>
-<Card border="primary" bg="dark" text="light" style={{width: "28rem", padding: "20px", margin: "20px"}}>
+<Card border="primary" bg="dark" text="light" style={{padding: "20px", margin: "20px"}}>
 <Card.Header>Username</Card.Header>
   <Card.Img variant="top" src="https://images.fineartamerica.com/images-medium-large-5/downtown-richmond-in-black-and-white-gordon-cain.jpg" />
   <Card.Body>
