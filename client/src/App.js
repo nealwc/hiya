@@ -4,7 +4,7 @@ import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
 import Card from './components/Card';
-import PostForm from "./components/PostForm";
+import PostForm from './pages/PostForm';
 
 import * as API from './utils/API';
 import AuthService from './utils/auth';
