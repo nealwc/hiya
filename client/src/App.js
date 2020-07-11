@@ -51,9 +51,9 @@ function App() {
             {/* <Route exact path='/' component={SearchBooks} />
             <Route exact path='/saved' component={SavedBooks} /> */}
             <Route exact path='/postform' component={PostForm} />
+            <Route exact path='/' component={Card} />
             {/* <Route render={() => <h1 className='display-2'>Wrong page!</h1>} /> */}
           </Switch>
-          <Card />
         </UserInfoContext.Provider>
       </>
     </Router>
