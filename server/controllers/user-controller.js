@@ -3,6 +3,8 @@ const { User } = require('../models');
 // import sign token function from auth
 const { signToken } = require('../utils/auth');
 
+// const { Post } = require('../models');
+
 module.exports = {
   // get all users
   async getAllUsers(req, res) {
@@ -75,4 +77,23 @@ module.exports = {
     }
     return res.json(updatedUser);
   },
+
+  // create a post
+  async createPost({ user, body }, res) {
+    console.log(user);
+    try {
+      const createdPost = await Post.create(body)
+      if (createdPost) {
+        console.log(createdPost)
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: user._id },
+          { $push: { posts: createdPost._id } },
+          { new: true, runValidators: true }
+        );
+        return res.json(updatedUser);
+      }
+    } catch (err) {
+      res.json(err);
+    };
+  }
 };
