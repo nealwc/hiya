@@ -10,7 +10,8 @@ import { createPost, savePost } from '../utils/API';
 function BlankForm() {
     const [postFormData, setpostFormData] = useState({
         title: '',
-        description: ''
+        description: '',
+        price:''
     });
 
     const userData = useContext(UserInfoContext);
@@ -67,6 +68,14 @@ function BlankForm() {
                                     value={postFormData.description}
                                     onChange={handleInputChange}
                                     placeholder="Enter Post Description" />
+                            </Form.Group>
+                            <Form.Group controlId="formBasicPrice">
+                                <Form.Label>Price</Form.Label>
+                                <Form.Control
+                                    name="price"
+                                    value={postFormData.price}
+                                    onChange={handleInputChange}
+                                    placeholder="Enter Price" />
                             </Form.Group>
                             <Button
                                 variant="primary" type="submit">

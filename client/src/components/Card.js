@@ -27,9 +27,8 @@ function AllPosts() {
                 <Card.Img variant="top" src="https://images.fineartamerica.com/images-medium-large-5/downtown-richmond-in-black-and-white-gordon-cain.jpg" />
                 <Card.Body>
                   <Card.Title>{post.title}</Card.Title>
-                  <Card.Text>
-                    {post.description}
-                  </Card.Text>
+                  <Card.Text>Description: {post.description}</Card.Text>
+                  <Card.Text>Price: ${post.price}</Card.Text>
                 </Card.Body>
               </Card>
             );
