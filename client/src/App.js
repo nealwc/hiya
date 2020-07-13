@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import SearchBooks from './pages/SearchBooks';
-import SavedBooks from './pages/SavedBooks';
+// import SearchBooks from './pages/SearchBooks';
+// import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
 import Card from './components/Card';
 import PostForm from './pages/PostForm';
@@ -19,6 +19,7 @@ function App() {
     username: '',
     email: '',
     bookCount: 0,
+    posts: [],
     // method to get user data after logging in
     getUserData: () => {
       // if user's logged in get the token or return null
@@ -28,8 +29,8 @@ function App() {
         return false;
       }
       API.getMe(token)
-        .then(({ data: { username, email, savedBooks, bookCount } }) =>
-          setUserInfo({ ...userInfo, username, email, savedBooks, bookCount })
+        .then(({ data: { username, email, savedBooks, bookCount, posts } }) =>
+          setUserInfo({ ...userInfo, username, email, savedBooks, bookCount, posts })
         )
         .catch((err) => console.log(err));
     },

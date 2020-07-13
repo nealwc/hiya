@@ -95,5 +95,21 @@ module.exports = {
     } catch (err) {
       res.json(err);
     };
+  },
+
+  // save a post to user's 'posts' field
+  async savePost({ user, body }, res) {
+    console.log(user);
+    try {
+      const updatedUser = await User.findOneAndUpdate(
+        { _id: user._id },
+        { $addToSet: { posts: body } },
+        { new: true, runValidators: true }
+      );
+      return res.json(updatedUser);
+    } catch (err) {
+      console.log(err);
+      return res.status(400).json(err);
+    }
   }
 };
