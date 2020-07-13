@@ -3,7 +3,7 @@ import { Form, Button, Alert, Container, Card } from 'react-bootstrap';
 
 import UserInfoContext from '../utils/UserInfoContext';
 import AuthService from '../utils/auth';
-import { createPost } from '../utils/API';
+import { createPost, savePost } from '../utils/API';
 
 
 
@@ -22,6 +22,8 @@ function BlankForm() {
 
     // function to handle saving a post to our database
     const handleSavePost = (e) => {
+        e.preventDefault();
+
         // get token
         const token = AuthService.loggedIn() ? AuthService.getToken() : null;
 
@@ -30,10 +32,10 @@ function BlankForm() {
         }
 
         // send the post data to our api
-        createPost(postFormData, token)
+        savePost(postFormData, token)
         console.log(postFormData, token)
-            .then(() => userData.getUserData())
-            .catch((err) => console.log(err));
+            // .then(() => userData.getUserData())
+            // .catch((err) => console.log(err));
     };
 
     return (
