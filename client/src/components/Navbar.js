@@ -33,9 +33,9 @@ function AppNavbar() {
                   <Nav.Link as={Link} to='/postform'>
                     Create a Post
                   </Nav.Link>
-                  <Nav.Link as={Link} to='/saved'>
+                  {/* <Nav.Link as={Link} to='/saved'>
                     Saved Posts
-                  </Nav.Link>
+                  </Nav.Link> */}
                   <Nav.Link onClick={AuthService.logout}>Logout</Nav.Link>
                 </>
               ) : (
