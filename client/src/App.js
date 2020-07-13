@@ -15,11 +15,11 @@ import UserInfoContext from './utils/UserInfoContext';
 function App() {
   // set data to be used for UserInfoContext and make it available to all other components
   const [userInfo, setUserInfo] = useState({
+    posts: [],
     savedBooks: [],
     username: '',
     email: '',
     bookCount: 0,
-    posts: [],
     // method to get user data after logging in
     getUserData: () => {
       // if user's logged in get the token or return null
