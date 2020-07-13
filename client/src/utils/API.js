@@ -37,6 +37,6 @@ export const searchGoogleBooks = function (query) {
   return axios.get('https://www.googleapis.com/books/v1/volumes', { params: { q: query } });
 };
 
-export const createPost = function (postData) {
-  return axios.post('/api/post', postData);
+export const createPost = function (postData, token) {
+  return axios.post('/api/users/post', postData, { headers: { authorization: `Bearer ${token}` } });
 };

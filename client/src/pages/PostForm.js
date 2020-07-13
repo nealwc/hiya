@@ -8,24 +8,33 @@ import { createPost } from '../utils/API';
 
 
 function BlankForm() {
+    const [postFormData, setpostFormData] = useState({
+        title: '',
+        description: ''
+    });
 
-    // // create function to handle saving a book to our database
-    // const handleSavePost = (bookId) => {
-    //     // find the book in `searchedBooks` state by the matching id
-    //     // const bookToSave = searchedBooks.find((book) => book.bookId === bookId);
+    const userData = useContext(UserInfoContext);
 
-    //     // get token
-    //     const token = AuthService.loggedIn() ? AuthService.getToken() : null;
+    function handleInputChange(e) {
+        const { name, value } = e.target;
+        setpostFormData({ ...postFormData, [name]: value })
+    };
 
-    //     if (!token) {
-    //         return false;
-    //     }
+    // function to handle saving a post to our database
+    const handleSavePost = (e) => {
+        // get token
+        const token = AuthService.loggedIn() ? AuthService.getToken() : null;
 
-    //     // send the books data to our api
-    //     // createPost(bookToSave, token)
-    //         // .then(() => userData.getUserData())
-    //         .catch((err) => console.log(err));
-    // };
+        if (!token) {
+            return false;
+        }
+
+        // send the post data to our api
+        createPost(postFormData, token)
+        console.log(postFormData, token)
+            .then(() => userData.getUserData())
+            .catch((err) => console.log(err));
+    };
 
     return (
         <>
@@ -34,27 +43,33 @@ function BlankForm() {
                     <Card.Header>Create a Post
             </Card.Header>
                     <Card.Body>
-                        <Form>
-
+                        <Form onSubmit={handleSavePost}>
                             <Form.Group>
                                 <Form.File id="exampleFormControlFile1" label="Add a photo!" />
                             </Form.Group>
-
-                            <Form.Group controlId="formBasicEmail">
+                            <Form.Group controlId="formBasicTitle">
                                 <Form.Label>Post Title</Form.Label>
-                                <Form.Control type="email" placeholder="Enter Post Title" />
+                                <Form.Control
+                                    name='title'
+                                    value={postFormData.title}
+                                    onChange={handleInputChange}
+                                    placeholder='Enter Post Title' />
                                 {/* <Form.Text className="text-muted">
-                        We'll never share your email with anyone else.
-                     </Form.Text> */}
+                                       We'll never share your email with anyone else.
+                                    </Form.Text> */}
                             </Form.Group>
-
-                            <Form.Group controlId="formBasicPassword">
+                            <Form.Group controlId="formBasicDescription">
                                 <Form.Label>Post Description</Form.Label>
-                                <Form.Control type="password" placeholder="Enter Post Description" />
+                                <Form.Control
+                                    name="description"
+                                    value={postFormData.description}
+                                    onChange={handleInputChange}
+                                    placeholder="Enter Post Description" />
                             </Form.Group>
-                            <Button variant="primary" type="submit">
+                            <Button
+                                variant="primary" type="submit">
                                 Submit
-                </Button>
+                              </Button>
                         </Form>
                     </Card.Body>
                 </Card>
