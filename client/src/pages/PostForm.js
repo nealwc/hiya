@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Form, Button, Alert, Container, Card } from 'react-bootstrap';
+import { Form, Button, Alert, Container, Card, Row, Col, Input } from 'react-bootstrap';
 
 import UserInfoContext from '../utils/UserInfoContext';
 import AuthService from '../utils/auth';
@@ -61,14 +61,51 @@ function BlankForm() {
                                        We'll never share your email with anyone else.
                                     </Form.Text> */}
                             </Form.Group>
+                            <Form.Row>
+                            
+                                    <Form.Group as={Col} controlId="exampleForm.ControlSelect1">
+                    <Form.Label>Select a Category</Form.Label>
+                    <Form.Control as="select">
+                        <option>Computers</option>
+                        <option>Tablets/Phones</option>
+                        <option>Parts</option>
+                        <option>Services</option>
+                        <option>Other</option>
+                    </Form.Control>
+                </Form.Group>
+                
+                    <Form.Group as={Col} controlId="formBasicPrice">
+                                <Form.Label>Price</Form.Label>
+                                <Form.Control
+                                    name="price"
+                                    value={postFormData.price}
+                                    onChange={handleInputChange}
+                                    placeholder="Enter Price" />
+                                    
+                            </Form.Group>
+                        
+                            </Form.Row>
+
                             <Form.Group controlId="formBasicDescription">
                                 <Form.Label>Post Description</Form.Label>
                                 <Form.Control
                                     name="description"
                                     value={postFormData.description}
                                     onChange={handleInputChange}
-                                    placeholder="Enter Post Description" />
+                                    placeholder="Enter Post Description"
+                                    as="textarea"
+                                    rows="3" />
                             </Form.Group>
+                            {/* <Form.Group controlId="exampleForm.ControlSelect1">
+                    <Form.Label>Select a Category</Form.Label>
+                    <Form.Control as="select">
+                        <option>Computers</option>
+                        <option>Tablets/Phones</option>
+                        <option>Parts</option>
+                        <option>Services</option>
+                        <option>Other</option>
+                    </Form.Control>
+                </Form.Group>
                             <Form.Group controlId="formBasicPrice">
                                 <Form.Label>Price</Form.Label>
                                 <Form.Control
@@ -76,7 +113,7 @@ function BlankForm() {
                                     value={postFormData.price}
                                     onChange={handleInputChange}
                                     placeholder="Enter Price" />
-                            </Form.Group>
+                            </Form.Group> */}
                             <Button
                                 variant="primary" type="submit">
                                 Submit
