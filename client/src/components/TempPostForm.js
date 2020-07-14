@@ -25,6 +25,17 @@ function PostForm() {
                      </Form.Text> */}
                 </Form.Group>
 
+                <Form.Group controlId="exampleForm.ControlSelect1">
+                    <Form.Label>Select a Category</Form.Label>
+                    <Form.Control as="select">
+                        <option>Computers</option>
+                        <option>Tablets/Phones</option>
+                        <option>Parts</option>
+                        <option>Services</option>
+                        <option>Other</option>
+                    </Form.Control>
+                </Form.Group>
+
                 <Form.Group controlId="formBasicPassword">
                     <Form.Label>Post Description</Form.Label>
                     <Form.Control type="password" placeholder="Enter Post Description" />
