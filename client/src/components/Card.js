@@ -23,19 +23,14 @@ function AllPosts() {
           {userData.posts.map((post) => {
             return (
               <Card border="primary" bg="dark" text="light" style={{ padding: "20px", margin: "20px" }}>
-                <Card.Header>{userData.username}
-                <Button href={`mailto: ${userData.email}`} variant="dark" style={{ fontSize: "45px"}}>
-                    &#9993;
-                  </Button>
+                <Card.Header style={{ fontSize: "25px" }}>{userData.username}
                 </Card.Header>
                 <Card.Img variant="top" src="https://images.fineartamerica.com/images-medium-large-5/downtown-richmond-in-black-and-white-gordon-cain.jpg" />
                 <Card.Body>
                   <Card.Title>{post.title}</Card.Title>
                   <Card.Text>Description: {post.description}</Card.Text>
                   <Card.Text>Price: ${post.price}</Card.Text>
-                  {/* <Button href={`mailto: ${userData.email}`} variant="dark" style={{ fontSize: "45px"}}>
-                    &#9993;
-                  </Button> */}
+                  <a href={`mailto: ${userData.email}`} style={{ color: "white", fontSize: "45px"}}>&#9993;</a>
                 </Card.Body>
               </Card>
             );
