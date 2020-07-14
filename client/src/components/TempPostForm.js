@@ -8,7 +8,8 @@ function PostForm() {
         <>
             <Container>
             <Card style={{margin: "25px"}}>
-            <Card.Header>Create a Post</Card.Header>
+            <Card.Header>Create a Post
+            </Card.Header>
             <Card.Body>
             <Form>
 
@@ -22,6 +23,17 @@ function PostForm() {
                     {/* <Form.Text className="text-muted">
                         We'll never share your email with anyone else.
                      </Form.Text> */}
+                </Form.Group>
+
+                <Form.Group controlId="exampleForm.ControlSelect1">
+                    <Form.Label>Select a Category</Form.Label>
+                    <Form.Control as="select">
+                        <option>Computers</option>
+                        <option>Tablets/Phones</option>
+                        <option>Parts</option>
+                        <option>Services</option>
+                        <option>Other</option>
+                    </Form.Control>
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword">

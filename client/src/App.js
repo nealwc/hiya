@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import SearchBooks from './pages/SearchBooks';
-import SavedBooks from './pages/SavedBooks';
+// import SearchBooks from './pages/SearchBooks';
+// import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
 import Card from './components/Card';
-import PostForm from "./components/PostForm";
+import PostForm from './pages/PostForm';
 
 import * as API from './utils/API';
 import AuthService from './utils/auth';
@@ -15,6 +15,7 @@ import UserInfoContext from './utils/UserInfoContext';
 function App() {
   // set data to be used for UserInfoContext and make it available to all other components
   const [userInfo, setUserInfo] = useState({
+    posts: [],
     savedBooks: [],
     username: '',
     email: '',
@@ -28,8 +29,8 @@ function App() {
         return false;
       }
       API.getMe(token)
-        .then(({ data: { username, email, savedBooks, bookCount } }) =>
-          setUserInfo({ ...userInfo, username, email, savedBooks, bookCount })
+        .then(({ data: { username, email, savedBooks, bookCount, posts } }) =>
+          setUserInfo({ ...userInfo, username, email, savedBooks, bookCount, posts })
         )
         .catch((err) => console.log(err));
     },
@@ -51,9 +52,9 @@ function App() {
             {/* <Route exact path='/' component={SearchBooks} />
             <Route exact path='/saved' component={SavedBooks} /> */}
             <Route exact path='/postform' component={PostForm} />
+            <Route exact path='/' component={Card} />
             {/* <Route render={() => <h1 className='display-2'>Wrong page!</h1>} /> */}
           </Switch>
-          <Card />
         </UserInfoContext.Provider>
       </>
     </Router>

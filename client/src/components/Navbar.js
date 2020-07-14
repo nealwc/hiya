@@ -21,7 +21,8 @@ function AppNavbar() {
       <Navbar bg='dark' variant="dark" expand='lg' sticky= "top">
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
-          {/* <Image src={Logo} rounded /> */}
+          HIYA
+          {/* <Navbar.Image src={Logo} rounded /> */}
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
@@ -32,9 +33,9 @@ function AppNavbar() {
                   <Nav.Link as={Link} to='/postform'>
                     Create a Post
                   </Nav.Link>
-                  <Nav.Link as={Link} to='/saved'>
-                    {username}'s Saved Posts
-                  </Nav.Link>
+                  {/* <Nav.Link as={Link} to='/saved'>
+                    Saved Posts
+                  </Nav.Link> */}
                   <Nav.Link onClick={AuthService.logout}>Logout</Nav.Link>
                 </>
               ) : (
