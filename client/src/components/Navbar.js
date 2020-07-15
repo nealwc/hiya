@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container, Modal, Tab, Image, ImageBackground} from 'react-bootstrap';
+import { Navbar, Nav, Container, Modal, Tab, Image} from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
 // import Card from './Card';
@@ -10,6 +10,7 @@ import AuthService from '../utils/auth';
 
 import Logo from '../utils/Photo/hiyadraft2fxd.png';
 
+
 function AppNavbar() {
   // set modal display state
   const [showModal, setShowModal] = useState(false);
@@ -18,7 +19,7 @@ function AppNavbar() {
 
   return (
     <>
-      <Navbar >
+      <Navbar bg="dark" variant="dark" expand="lg" sticky="top" style={{'outline': '2px solid #0275d8'}} >
         
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>

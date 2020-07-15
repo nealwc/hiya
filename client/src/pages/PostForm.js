@@ -4,13 +4,14 @@ import { BrowserRouter as Router, Switch, Route, useHistory } from 'react-router
 
 import UserInfoContext from '../utils/UserInfoContext';
 import AuthService from '../utils/auth';
-import { createPost, savePost } from '../utils/API';
+import { createItem, saveItem } from '../utils/API';
+import AllItems from '../components/Card';
 
 
 
 function BlankForm() {
-    const history=useHistory();
-    const [postFormData, setpostFormData] = useState({
+    const history = useHistory();
+    const [itemFormData, setItemFormData] = useState({
         title: '',
         description: '',
         price: '',
@@ -21,11 +22,11 @@ function BlankForm() {
 
     function handleInputChange(e) {
         const { name, value } = e.target;
-        setpostFormData({ ...postFormData, [name]: value })
+        setItemFormData({ ...itemFormData, [name]: value })
     };
 
-    // function to handle saving a post to our database
-    const handleSavePost = (e) => {
+    // function to handle saving an item to our database
+    const handleSaveItem = (e) => {
         e.preventDefault();
 
         // get token
@@ -35,28 +36,23 @@ function BlankForm() {
             return false;
         }
 
-        // send the post data to our api
-        savePost(postFormData, token).then(()=>{
-            console.log(postFormData, token);
-            history.push("/")   
-            
+        // send the item data to our api
+        saveItem(itemFormData, token).then(() => {
+            console.log(itemFormData, token);
+            history.push('/')
         })
-        
-            // .then(<Router>
-            //         <Route exact path='/' component={Card}/>
-            //         </Router>)
-        // .then(() => userData.getUserData())
-        // .catch((err) => console.log(err));
+       
+
     };
 
     return (
         <>
             <Container>
                 <Card style={{ margin: "25px" }}>
-                    <Card.Header>Create a Post
+                    <Card.Header>Post an Item
             </Card.Header>
                     <Card.Body>
-                        <Form onSubmit={handleSavePost}>
+                        <Form onSubmit={handleSaveItem}>
                             <Form.Group>
                                 <Form.File id="exampleFormControlFile1" label="Add a photo!" />
                             </Form.Group>
@@ -64,7 +60,7 @@ function BlankForm() {
                                 <Form.Label>What would you like to offer? *</Form.Label>
                                 <Form.Control
                                     name='title'
-                                    value={postFormData.title}
+                                    value={itemFormData.title}
                                     onChange={handleInputChange}
                                     placeholder='Item Name' />
                                 {/* <Form.Text className="text-muted">
@@ -78,7 +74,7 @@ function BlankForm() {
                                     <Form.Control 
                                         as="select"
                                         name='category'
-                                        value={postFormData.category}
+                                        value={itemFormData.category}
                                         onChange={handleInputChange}>
                                             <option>Computers</option>
                                             <option>Tablets/Phones</option>
@@ -92,7 +88,7 @@ function BlankForm() {
                                     <Form.Label>What's the asking price? *</Form.Label>
                                     <Form.Control
                                         name="price"
-                                        value={postFormData.price}
+                                        value={itemFormData.price}
                                         onChange={handleInputChange}
                                         placeholder="Price" />
 
@@ -104,7 +100,7 @@ function BlankForm() {
                                 <Form.Label>Please describe your item:</Form.Label>
                                 <Form.Control
                                     name="description"
-                                    value={postFormData.description}
+                                    value={itemFormData.description}
                                     onChange={handleInputChange}
                                     placeholder="Description"
                                     as="textarea"
@@ -124,7 +120,7 @@ function BlankForm() {
                                 <Form.Label>Price</Form.Label>
                                 <Form.Control
                                     name="price"
-                                    value={postFormData.price}
+                                    value={itemFormData.price}
                                     onChange={handleInputChange}
                                     placeholder="Enter Price" />
                             </Form.Group> */}

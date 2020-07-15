@@ -6,8 +6,7 @@ const {
   saveBook,
   deleteBook,
   login,
-  createPost,
-  savePost
+  saveItem
 } = require('../../controllers/user-controller');
 
 // import middleware
@@ -17,7 +16,7 @@ const { authMiddleware } = require('../../utils/auth');
 
 // router.route('/').get(getAllUsers).post(createUser).put(authMiddleware, saveBook);
 
-router.route('/').get(getAllUsers).post(createUser).put(authMiddleware, savePost);
+router.route('/').get(getAllUsers).post(createUser).put(authMiddleware, saveItem);
 
 router.route('/login').post(login);
 
@@ -27,6 +26,6 @@ router.route('/:username').get(getSingleUser);
 
 router.route('/books/:id').delete(authMiddleware, deleteBook);
 
-router.route('/post').post(authMiddleware, createPost);
+// router.route('/post').post(authMiddleware, createPost);
 
 module.exports = router;

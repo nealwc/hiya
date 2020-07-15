@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import {Image} from 'react-bootstrap';
+
 // import SearchBooks from './pages/SearchBooks';
 // import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
@@ -10,7 +10,7 @@ import PostForm from './pages/PostForm';
 import * as API from './utils/API';
 import AuthService from './utils/auth';
 
-// import RVA from './utils/Photo/rvagray.jpg'
+
 
 // import our context object for state
 import UserInfoContext from './utils/UserInfoContext';
@@ -18,7 +18,7 @@ import UserInfoContext from './utils/UserInfoContext';
 function App() {
   // set data to be used for UserInfoContext and make it available to all other components
   const [userInfo, setUserInfo] = useState({
-    posts: [],
+    items: [],
     savedBooks: [],
     username: '',
     email: '',
@@ -32,8 +32,8 @@ function App() {
         return false;
       }
       API.getMe(token)
-        .then(({ data: { username, email, savedBooks, bookCount, posts } }) =>
-          setUserInfo({ ...userInfo, username, email, savedBooks, bookCount, posts })
+        .then(({ data: { username, email, savedBooks, bookCount, items } }) =>
+          setUserInfo({ ...userInfo, username, email, savedBooks, bookCount, items })
         )
         .catch((err) => console.log(err));
     },
