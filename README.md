@@ -2,7 +2,7 @@
 
 hiyaTech is a full stack apllication that includes Node/Express/React/JWT which is deployed through heroku.
 
-## About hiyaTech
+## About
 
 hiyaTech is a website that allows user to buy and trade technology items without any issue. 
 
@@ -15,7 +15,7 @@ item into there "Saved Posts". Which is located on the navigation bar.
 
 https://hiya-tech.herokuapp.com/ - Link to website
 
-## Starting the app locally
+## Usage
 
 First off make sure you have a local version of MongoDB running on your machine. This project will make a local database for you called `appDB`.
 
@@ -37,8 +37,8 @@ npm start
 
 That's it, your app should be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
 
-## Contributers
-Carter Neal - nealwc - https://github.com/nealwc
-Jake Patton - jspatton40 - https://github.com/jspatton40
-Jerome Kapeller - SjeromeK - https://github.com/SjeromeK
-Seth McNeace - McNeace - https://github.com/McNeace
+## Contributing
+- Carter Neal - [nealwc](https://github.com/nealwc)
+- Jake Patton - [jspatton40](https://github.com/jspatton40)
+- Jerome Kapeller - [SjeromeK](https://github.com/SjeromeK)
+- Seth McNeace - [McNeace](https://github.com/McNeace)
