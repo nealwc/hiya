@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container, Modal, Tab, Image } from 'react-bootstrap';
+import { Navbar, Nav, Container, Modal, Tab, Image, ImageBackground} from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
 // import Card from './Card';
@@ -8,7 +8,7 @@ import LoginForm from './LoginForm';
 import UserInfoContext from '../utils/UserInfoContext';
 import AuthService from '../utils/auth';
 
-// import Logo from './Photo/hiyadraft';
+import Logo from '../utils/Photo/hiyadraft2fxd.png';
 
 function AppNavbar() {
   // set modal display state
@@ -18,11 +18,12 @@ function AppNavbar() {
 
   return (
     <>
-      <Navbar bg='dark' variant="dark" expand='lg' sticky= "top">
+      <Navbar >
+        
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
-          HIYA
-          {/* <Navbar.Image src={Logo} rounded /> */}
+          {/* HIYA */}
+          <Image src={Logo} rounded style={{'width': '200px'}} />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
@@ -30,16 +31,16 @@ function AppNavbar() {
               {/* if user is logged in show saved books and logout */}
               {username ? (
                 <>
-                  <Nav.Link as={Link} to='/postform'>
-                    Create a Post
+                  <Nav.Link as={Link} to='/postform' style={{color: '#0275d8'}}>
+                    <strong>Create a Post</strong>
                   </Nav.Link>
                   {/* <Nav.Link as={Link} to='/saved'>
                     Saved Posts
                   </Nav.Link> */}
-                  <Nav.Link onClick={AuthService.logout}>Logout</Nav.Link>
+                  <Nav.Link onClick={AuthService.logout} style={{color: '#0275d8'}}><strong>Logout</strong></Nav.Link>
                 </>
               ) : (
-                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
+                <Nav.Link onClick={() => setShowModal(true)} style={{color: '#0275d8'}}><strong>Login/Sign Up</strong></Nav.Link>
               )}
             </Nav>
           </Navbar.Collapse>

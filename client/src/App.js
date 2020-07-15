@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {Image} from 'react-bootstrap';
 // import SearchBooks from './pages/SearchBooks';
 // import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
@@ -8,6 +9,8 @@ import PostForm from './pages/PostForm';
 
 import * as API from './utils/API';
 import AuthService from './utils/auth';
+
+// import RVA from './utils/Photo/rvagray.jpg'
 
 // import our context object for state
 import UserInfoContext from './utils/UserInfoContext';
@@ -42,12 +45,14 @@ function App() {
   });
 
   return (
+    // <div styles={{backgroundImage:'url(${RVA})'}}>
     <Router>
       <>
         {/* wrap our entire app in context provider and provide userInfo state as value */}
         <UserInfoContext.Provider value={userInfo}>
           <Navbar />
-      
+          {/* <Image src={RVA} style={{'width': '100%'}} /> */}
+          
           <Switch>
             {/* <Route exact path='/' component={SearchBooks} />
             <Route exact path='/saved' component={SavedBooks} /> */}
@@ -55,9 +60,11 @@ function App() {
             <Route exact path='/' component={Card} />
             {/* <Route render={() => <h1 className='display-2'>Wrong page!</h1>} /> */}
           </Switch>
+          
         </UserInfoContext.Provider>
       </>
     </Router>
+    // </div>
   );
 }
 
