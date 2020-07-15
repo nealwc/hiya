@@ -4,7 +4,7 @@ hiyaTech is a full stack apllication that includes Node/Express/React/JWT which 
 
 ## About hiyaTech
 
-hiyaTech is a website that allows user to buy and trade items without any issue. 
+hiyaTech is a website that allows user to buy and trade technology items without any issue. 
 
 This website is best for a simple complex marketplace that shows users an image and descirption of the item that they are selling/trading. 
 
@@ -38,7 +38,7 @@ npm start
 That's it, your app should be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
 
 ## Contributers
-Carter Neal - nealwc
-Jake Patton - jspatton40
-Jerome Kapeller - 
-Seth McNeace - mcneace
+Carter Neal - nealwc - https://github.com/nealwc
+Jake Patton - jspatton40 - https://github.com/jspatton40
+Jerome Kapeller - SjeromeK - https://github.com/SjeromeK
+Seth McNeace - McNeace - https://github.com/McNeace
