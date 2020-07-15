@@ -45,3 +45,7 @@ export const createPost = function (postData, token) {
 export const savePost = function (postData, token) {
   return axios.put('/api/users', postData, { headers: { authorization: `Bearer ${token}` } });
 };
+
+export const saveItem = function (itemData, token) {
+  return axios.put('/api/users', itemData, { headers: { authorization: `Bearer ${token}` } });
+};
