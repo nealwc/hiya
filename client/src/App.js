@@ -15,7 +15,7 @@ import UserInfoContext from './utils/UserInfoContext';
 function App() {
   // set data to be used for UserInfoContext and make it available to all other components
   const [userInfo, setUserInfo] = useState({
-    posts: [],
+    items: [],
     savedBooks: [],
     username: '',
     email: '',
@@ -29,8 +29,8 @@ function App() {
         return false;
       }
       API.getMe(token)
-        .then(({ data: { username, email, savedBooks, bookCount, posts } }) =>
-          setUserInfo({ ...userInfo, username, email, savedBooks, bookCount, posts })
+        .then(({ data: { username, email, savedBooks, bookCount, items } }) =>
+          setUserInfo({ ...userInfo, username, email, savedBooks, bookCount, items })
         )
         .catch((err) => console.log(err));
     },
