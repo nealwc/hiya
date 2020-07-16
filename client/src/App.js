@@ -18,7 +18,7 @@ import UserInfoContext from './utils/UserInfoContext';
 function App() {
   // set data to be used for UserInfoContext and make it available to all other components
   const [userInfo, setUserInfo] = useState({
-    items: [],
+    // items: [],
     savedBooks: [],
     username: '',
     email: '',

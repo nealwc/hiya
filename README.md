@@ -1,25 +1,21 @@
-# hiya
+# hiyaTech
 
-# googlebooks-app with authentication using JWT (JSON Web Token)
+hiyaTech is a full stack apllication that includes Node/Express/React/JWT which is deployed through heroku.
 
-## About This Boilerplate
+## About
 
-This setup allows for a Node/Express/React/JWT app which can be easily deployed to Heroku.
+hiyaTech is a website that allows user to buy and trade technology items without any issue. 
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+This website is best for a simple complex marketplace that shows users an image and descirption of the item that they are selling/trading. 
 
-An article on how the server is setup with JWT can be found [here](https://hptechblogs.com/using-json-web-token-for-authentication/). This has been modified to use a mongo database instead of hardcoded array of users.
+If the user likes the item but doesnt have insignificant funds for the item then the user can use the save item button, which will save that 
+item into there "Saved Posts". Which is located on the navigation bar.
 
-The front end has been setup to use JWT as a way of authenticating users and routes. To understand it's structure better please refer to the following article [here](https://hptechblogs.com/using-json-web-token-react/)
+## Deployment (Heroku)
 
-Please feel free to modify this code in anyway you see fit for your project. It is a boilerplate setup that tries to make sure you can get something up and running without having to worry about setting up user authentication from scratch.
-I highly suggest you read the articles before jumping in so you can have an better understanding of how everything works in the code.
+https://hiya-tech.herokuapp.com/ - Link to website
 
-Server-side article and using JWT: https://hptechblogs.com/using-json-web-token-for-authentication/
-
-Front End article on using the JWT on a react application: https://hptechblogs.com/using-json-web-token-react/
-
-## Starting the app locally
+## Usage
 
 First off make sure you have a local version of MongoDB running on your machine. This project will make a local database for you called `appDB`.
 
@@ -41,21 +37,8 @@ npm start
 
 That's it, your app should be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
 
-## Deployment (Heroku)
-
-### Create a Git Repo
-
-Once you're ready to deploy, start by making sure your project is a git repository. If so, proceed to the next section, otherwise run the following commands in your terminal:
-
-```
-git init
-git add .
-git commit -m "Initial commit"
-```
-
-### Deploying
-
-1. Go onto your heroku account and link your repository through the UI
-2. Go to resources and find mLab as a Add-on
-3. Provision a Mongo Database
-4. Go back and click "Deploy"
+## Contributing
+- Carter Neal - [nealwc](https://github.com/nealwc)
+- Jake Patton - [jspatton40](https://github.com/jspatton40)
+- Jerome Kapeller - [SjeromeK](https://github.com/SjeromeK)
+- Seth McNeace - [McNeace](https://github.com/McNeace)

@@ -26,6 +26,4 @@ router.route('/:username').get(getSingleUser);
 
 router.route('/books/:id').delete(authMiddleware, deleteBook);
 
-// router.route('/post').post(authMiddleware, createPost);
-
 module.exports = router;

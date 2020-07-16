@@ -19,7 +19,7 @@ function AllItems() {
       <Container fluid>
         {/* <Row>
           <Col> */}
-        <CardColumns>
+        {/* <CardColumns>
           {userData.items.map((item) => {
             return (
               <Card border="primary" bg="dark" text="light" style={{ padding: "20px", margin: "20px" }}>
@@ -35,7 +35,8 @@ function AllItems() {
               </Card>
             );
           })}
-        </CardColumns>
+        </CardColumns> */}
+        <h1>test</h1>
         {/* </Col>
         </Row> */}
       </Container>
