@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const bookSchema = require('./Book');
 
 // import schema from Item.js
-const itemSchema = require('./Item')
+// const itemSchema = require('./Item')
 
 const userSchema = new Schema(
   {
@@ -27,7 +27,7 @@ const userSchema = new Schema(
     // set savedBooks to be an array of data that adheres to the bookSchema
     savedBooks: [bookSchema],
     // set items to be an array of data that adheres to itemSchema
-    items: [itemSchema],
+    // items: [itemSchema],
   },
   // set this to use virtual below
   {

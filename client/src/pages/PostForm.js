@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route, useHistory } from 'react-router
 
 import UserInfoContext from '../utils/UserInfoContext';
 import AuthService from '../utils/auth';
-import { createItem, saveItem } from '../utils/API';
+import  { saveItem }from '../utils/API';
 import AllItems from '../components/Card';
 
 
@@ -29,20 +29,11 @@ function BlankForm() {
     const handleSaveItem = (e) => {
         e.preventDefault();
 
-        // get token
-        const token = AuthService.loggedIn() ? AuthService.getToken() : null;
-
-        if (!token) {
-            return false;
-        }
-
         // send the item data to our api
-        saveItem(itemFormData, token).then(() => {
-            console.log(itemFormData, token);
+        saveItem(itemFormData).then(() => {
+            console.log(itemFormData);
             history.push('/')
         })
-       
-
     };
 
     return (
