@@ -3,10 +3,9 @@ const {
     getAllItems,
     createItem
 } = require('../../controllers/item-controller');
-const { model } = require('mongoose');
 
-router.route('/')
+// router.route('/')
 
-router.route('/post').post(createItem);
+router.route('/').post(createItem);
 
 module.exports = router;
