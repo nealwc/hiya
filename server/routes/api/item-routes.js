@@ -6,6 +6,6 @@ const {
 
 // router.route('/')
 
-router.route('/').post(createItem);
+router.route('/').get(getAllItems).post(createItem);
 
 module.exports = router;

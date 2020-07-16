@@ -38,14 +38,18 @@ export const searchGoogleBooks = function (query) {
   return axios.get('https://www.googleapis.com/books/v1/volumes', { params: { q: query } });
 };
 
-export const createPost = function (postData, token) {
-  return axios.put('/api/users/post', postData, { headers: { authorization: `Bearer ${token}` } });
-};
+// export const createPost = function (postData, token) {
+//   return axios.put('/api/users/post', postData, { headers: { authorization: `Bearer ${token}` } });
+// };
 
-export const savePost = function (postData, token) {
-  return axios.put('/api/users', postData, { headers: { authorization: `Bearer ${token}` } });
-};
+// export const savePost = function (postData, token) {
+//   return axios.put('/api/users', postData, { headers: { authorization: `Bearer ${token}` } });
+// };
 
 export const saveItem = function (itemData) {
   return axios.post('/api/items', itemData);
+};
+
+export const getAllItems = function (itemData) {
+  return axios.get('/api/items', itemData);
 };
