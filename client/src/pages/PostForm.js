@@ -67,6 +67,7 @@ function BlankForm() {
                                         name='category'
                                         value={itemFormData.category}
                                         onChange={handleInputChange}>
+                                            <option>Select a Category</option>
                                             <option>Computers</option>
                                             <option>Tablets/Phones</option>
                                             <option>Parts</option>

@@ -22,3 +22,12 @@ h6 {
   font-weight: 300;
   font-style: italic;
 }
+
+.nav-tabs{
+  position: relative;
+  right: 350px;
+}
+
+.nav-tabs>title:hover{
+  color: white;
+}

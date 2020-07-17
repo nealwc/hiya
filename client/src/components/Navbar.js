@@ -1,9 +1,12 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container, Modal, Tab, Image} from 'react-bootstrap';
+import { Navbar, Nav, Container, Modal, Tabs, Tab, Image} from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
 // import Card from './Card';
+
+import '../index.css';
+
 
 import UserInfoContext from '../utils/UserInfoContext';
 import AuthService from '../utils/auth';
@@ -19,8 +22,8 @@ function AppNavbar() {
 
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg" sticky="top" style={{'outline': '2px solid #0275d8'}} >
-        
+      <Navbar  expand="lg" sticky="top" style={{'outline': '2px solid #0275d8'}} >
+      {/* bg="dark" variant="dark" expand="lg" sticky="top" style={{'outline': '2px solid #0275d8'}} */}
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
           {/* HIYA */}
@@ -29,9 +32,26 @@ function AppNavbar() {
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>
-              {/* if user is logged in show saved books and logout */}
+              {/* if user is logged in show create a post and logout */}
               {username ? (
                 <>
+                  <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" style={{color: 'white'}}>
+                    <Tab eventKey="computers" title="Computers" className="nav-tabs" >
+    {/* <Sonnet /> */}
+                  </Tab>
+                  <Tab eventKey="tablets/phones" title="Tablets/Phones" >
+    {/* <Sonnet /> */}
+                  </Tab>
+                  <Tab eventKey="parts" title="Parts" >
+    {/* <Sonnet /> */}
+                  </Tab>
+                  <Tab eventKey="services" title="Services" >
+    {/* <Sonnet /> */}
+                  </Tab>
+                  <Tab eventKey="other" title="Other">
+    {/* <Sonnet /> */}
+                  </Tab>
+</Tabs>
                   <Nav.Link as={Link} to='/postform' style={{color: '#0275d8'}}>
                     <strong>Create a Post</strong>
                   </Nav.Link>
@@ -60,7 +80,9 @@ function AppNavbar() {
                 <Nav.Item>
                   <Nav.Link eventKey='signup'>Sign Up</Nav.Link>
                 </Nav.Item>
+                
               </Nav>
+              
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
