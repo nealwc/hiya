@@ -1,5 +1,12 @@
 body {
   font-family: 'Rubik', sans-serif;
+  background-image: url(./utils/Photo/pattern.jpg);
+  background-repeat: none;
+  background-size: cover;  
+}
+
+body {
+  
 }
 
 h1,
@@ -14,4 +21,13 @@ h6 {
 .small {
   font-weight: 300;
   font-style: italic;
+}
+
+.nav-tabs{
+  position: relative;
+  right: 350px;
+}
+
+.nav-tabs>title:hover{
+  color: white;
 }
