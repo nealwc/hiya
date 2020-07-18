@@ -19,7 +19,7 @@ import UserInfoContext from './utils/UserInfoContext';
 function App() {
   // set data to be used for UserInfoContext and make it available to all other components
   const [userInfo, setUserInfo] = useState({
-    // items: [],
+    items: [],
     savedBooks: [],
     username: '',
     email: '',
@@ -55,8 +55,6 @@ function App() {
           {/* <Image src={RVA} style={{'width': '100%'}} /> */}
           
           <Switch>
-            {/* <Route exact path='/' component={SearchBooks} />
-            <Route exact path='/saved' component={SavedBooks} /> */}
             <Route exact path='/postform' component={PostForm} />
             <Route exact path='/' component={Card} />
             {/* <Route render={() => <h1 className='display-2'>Wrong page!</h1>} /> */}

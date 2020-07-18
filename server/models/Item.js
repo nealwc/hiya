@@ -1,6 +1,10 @@
 const { Schema, model } = require('mongoose');
 
 const itemSchema = new Schema({
+    user: { 
+        type: Schema.Types.ObjectId,
+        ref: "User"
+    },
     title: {
         type: String,
         required: true,
