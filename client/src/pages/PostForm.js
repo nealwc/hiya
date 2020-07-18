@@ -62,12 +62,15 @@ function BlankForm() {
 
                                 <Form.Group as={Col} controlId="exampleForm.ControlSelect1">
                                     <Form.Label>How would you categorize your item? *</Form.Label>
+                                    
                                     <Form.Control 
                                         as="select"
                                         name='category'
                                         value={itemFormData.category}
-                                        onChange={handleInputChange}>
-                                            <option>Select a Category</option>
+                                        onChange={handleInputChange}
+                                        placeholder='Select a Category'
+                                        >
+                                            <option disabled></option>
                                             <option>Computers</option>
                                             <option>Tablets/Phones</option>
                                             <option>Parts</option>
