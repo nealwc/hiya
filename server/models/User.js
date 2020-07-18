@@ -27,7 +27,15 @@ const userSchema = new Schema(
     // set savedBooks to be an array of data that adheres to the bookSchema
     savedBooks: [bookSchema],
     // set items to be an array of data that adheres to itemSchema
-    // items: [itemSchema],
+    items: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Item"
+      }
+    //   // {
+    //   //   type: String
+    //   // }
+    ],
   },
   // set this to use virtual below
   {

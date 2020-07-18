@@ -50,6 +50,6 @@ export const saveItem = function (itemData) {
   return axios.post('/api/items', itemData);
 };
 
-export const getAllItems = function (itemData) {
-  return axios.get('/api/items', itemData);
+export const getAllItems = function () {
+  return axios.get('/api/items');
 };

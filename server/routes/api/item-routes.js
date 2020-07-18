@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const {
     getAllItems,
-    createItem
+    saveItem
 } = require('../../controllers/item-controller');
 
 // router.route('/')
 
-router.route('/').get(getAllItems).post(createItem);
+router.route('/').get(getAllItems).post(saveItem);
 
 module.exports = router;
