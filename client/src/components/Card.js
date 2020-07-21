@@ -3,7 +3,7 @@ import { Card, CardDeck, Row, Col, Container, CardColumns, Button } from 'react-
 
 // import context for global state
 import UserInfoContext from '../utils/UserInfoContext';
-import ItemInfoContext from '../utils/ItemInfoContext';
+// import ItemInfoContext from '../utils/ItemInfoContext';
 
 import * as API from '../utils/API';
 import AuthService from '../utils/auth';
