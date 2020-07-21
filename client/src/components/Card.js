@@ -15,6 +15,7 @@ function AllItems() {
   const { username } = useContext(UserInfoContext);
 
   const [items, setItems] = useState([]);
+  const [filterItems, setFilterItems] = useState([]);
 
   useEffect(() => {
     loadItems()
