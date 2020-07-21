@@ -23,11 +23,28 @@ h6 {
   font-style: italic;
 }
 
-.nav-tabs{
+.categories{
   position: relative;
-  right: 350px;
-}
+  right: 115px;
+  top: 105px;
+  font-size: 20px;
+  margin-bottom: 0px;
+  /* color: #0275d8 */
 
+}
+/* 
 .nav-tabs>title:hover{
   color: white;
+} */
+
+#logout {
+  font-size: 20px;
+  margin-left: 40px;
+  border-radius: 25px;
+}
+
+#create {
+  font-size: 20px;
+  margin-left: 40px;
+  border-radius: 25px;
 }

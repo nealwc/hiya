@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Card from './components/Card';
 import PostForm from './pages/PostForm';
-import Tabs from './components/Tabs'
+// import Tabs from './components/Tabs'
 
 import * as API from './utils/API';
 import AuthService from './utils/auth';
@@ -59,7 +59,7 @@ function App() {
             <Route exact path='/' component={Card} />
             {/* <Route render={() => <h1 className='display-2'>Wrong page!</h1>} /> */}
           </Switch>
-          {/* <Tabs /> */}
+      
           
         </UserInfoContext.Provider>
       </>

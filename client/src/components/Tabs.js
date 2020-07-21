@@ -35,3 +35,24 @@
 // };
 
 // export default Tabs
+
+
+
+
+<Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" style={{color: 'white'}}>
+<Tab eventKey="computers" title="Computers" className="nav-tabs" >
+{/* <Sonnet /> */}
+</Tab>
+<Tab eventKey="tablets/phones" title="Tablets/Phones" >
+{/* <Sonnet /> */}
+</Tab>
+<Tab eventKey="parts" title="Parts" >
+{/* <Sonnet /> */}
+</Tab>
+<Tab eventKey="services" title="Services" >
+{/* <Sonnet /> */}
+</Tab>
+<Tab eventKey="other" title="Other">
+{/* <Sonnet /> */}
+</Tab>
+</Tabs>

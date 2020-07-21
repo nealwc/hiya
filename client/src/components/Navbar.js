@@ -22,7 +22,7 @@ function AppNavbar() {
 
   return (
     <>
-      <Navbar  expand="lg" sticky="top" style={{'outline': '2px solid #0275d8'}} >
+      <Navbar  expand="lg" sticky="top" style={{'outline': '2px solid #0275d8', marginBottom: '60px'}} >
       {/* bg="dark" variant="dark" expand="lg" sticky="top" style={{'outline': '2px solid #0275d8'}} */}
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
@@ -35,33 +35,34 @@ function AppNavbar() {
               {/* if user is logged in show create a post and logout */}
               {username ? (
                 <>
-                  <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" style={{color: 'white'}}>
-                    <Tab eventKey="computers" title="Computers" className="nav-tabs" >
-    {/* <Sonnet /> */}
-                  </Tab>
-                  <Tab eventKey="tablets/phones" title="Tablets/Phones" >
-    {/* <Sonnet /> */}
-                  </Tab>
-                  <Tab eventKey="parts" title="Parts" >
-    {/* <Sonnet /> */}
-                  </Tab>
-                  <Tab eventKey="services" title="Services" >
-    {/* <Sonnet /> */}
-                  </Tab>
-                  <Tab eventKey="other" title="Other">
-    {/* <Sonnet /> */}
-                  </Tab>
-</Tabs>
-                  <Nav.Link as={Link} to='/postform' style={{color: '#0275d8'}}>
+                  <Nav className='categories'>
+                    <Nav.Item>
+                      <Nav.Link as={Link} to='/' style={{color: '#0275d8', marginRight: '25px'}}>Computers</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link as={Link} to='/' style={{color: '#0275d8', marginRight: '25px'}}>Tablets/Phones</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link as={Link} to='/' style={{color: '#0275d8', marginRight: '25px'}}>Parts</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link as={Link} to='/' style={{color: '#0275d8', marginRight: '25px'}}>Services</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link as={Link} to='/' style={{color: '#0275d8', marginRight: '25px'}}>Other</Nav.Link>
+                    </Nav.Item>
+                  </Nav>
+                  <Nav.Link as={Link} to='/postform' style={{color: '#0275d8'}} id="create">
                     <strong>Create a Post</strong>
                   </Nav.Link>
                   {/* <Nav.Link as={Link} to='/saved'>
                     Saved Posts
                   </Nav.Link> */}
-                  <Nav.Link onClick={AuthService.logout} style={{color: '#0275d8'}}><strong>Logout</strong></Nav.Link>
+
+                  <Nav.Link onClick={AuthService.logout} style={{color: '#0275d8'}} id="logout"><strong>Logout</strong></Nav.Link>
                 </>
               ) : (
-                <Nav.Link onClick={() => setShowModal(true)} style={{color: '#0275d8'}}><strong>Login/Sign Up</strong></Nav.Link>
+                <Nav.Link onClick={() => setShowModal(true)} style={{color: '#0275d8'}} id="login"><strong>Login/Sign Up</strong></Nav.Link>
               )}
             </Nav>
           </Navbar.Collapse>
