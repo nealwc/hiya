@@ -6,6 +6,9 @@ const {
 
 // router.route('/')
 
-router.route('/').get(getAllItems).post(saveItem);
+const { authMiddleware } = require('../../utils/auth');
+
+
+router.route('/').get(getAllItems).post(authMiddleware, saveItem);
 
 module.exports = router;
