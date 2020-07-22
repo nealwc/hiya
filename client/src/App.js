@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // import SearchBooks from './pages/SearchBooks';
 // import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
-import Card from './components/Card';
+import Card from './pages/Card';
 import PostForm from './pages/PostForm';
 // import Tabs from './components/Tabs'
 
