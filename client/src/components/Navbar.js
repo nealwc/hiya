@@ -22,7 +22,7 @@ function AppNavbar() {
 
   return (
     <>
-      <Navbar  expand="lg" sticky="top" style={{'outline': '2px solid #0275d8', marginBottom: '60px'}} >
+      <Navbar  expand="lg"  style={{'outline': '2px solid #0275d8', marginBottom: '60px', backgroundImage: ''}} >
       {/* bg="dark" variant="dark" expand="lg" sticky="top" style={{'outline': '2px solid #0275d8'}} */}
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
@@ -35,7 +35,7 @@ function AppNavbar() {
               {/* if user is logged in show create a post and logout */}
               {username ? (
                 <>
-                  <Nav className='categories'>
+                  {/* <Nav className='categories'>
                     <Nav.Item>
                       <Nav.Link as={Link} to='/' style={{color: '#0275d8', marginRight: '25px'}}>Computers</Nav.Link>
                     </Nav.Item>
@@ -51,7 +51,7 @@ function AppNavbar() {
                     <Nav.Item>
                       <Nav.Link as={Link} to='/' style={{color: '#0275d8', marginRight: '25px'}}>Other</Nav.Link>
                     </Nav.Item>
-                  </Nav>
+                  </Nav> */}
                   <Nav.Link as={Link} to='/postform' style={{color: '#0275d8'}} id="create">
                     <strong>Create a Post</strong>
                   </Nav.Link>

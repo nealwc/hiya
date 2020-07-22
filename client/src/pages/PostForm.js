@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route, useHistory } from 'react-router
 import UserInfoContext from '../utils/UserInfoContext';
 import AuthService from '../utils/auth';
 import  { saveItem }from '../utils/API';
-import AllItems from '../components/Card';
+import AllItems from './Card';
 
 
 

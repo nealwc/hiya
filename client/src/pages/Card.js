@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { Card, CardDeck, Row, Col, Container, CardColumns, Button } from 'react-bootstrap';
+import { Card, CardDeck, Row, Col, Container, CardColumns, Button, Tabs, Tab } from 'react-bootstrap';
 
 // import context for global state
 import UserInfoContext from '../utils/UserInfoContext';
@@ -33,7 +33,43 @@ function AllItems() {
 
   return (
     <>
-      <Container fluid>
+      <Container style={{width: '100%'}}>
+      <Row className='categories'>
+        <Col>
+        {/* <Nav className='categories'> */}
+{/*                     
+                      <Link as={Link} to='/' style={{color: '#0275d8', marginRight: '25px'}}>Computers</Link>
+                    
+                    
+                      <Link as={Link} to='/' style={{color: '#0275d8', marginRight: '25px'}}>Tablets/Phones</Link>
+                    
+                    
+                      <Link as={Link} to='/' style={{color: '#0275d8', marginRight: '25px'}}>Parts</Link>
+                    
+                      <Link as={Link} to='/' style={{color: '#0275d8', marginRight: '25px'}}>Services</Link>
+                   
+                      <Link as={Link} to='/' style={{color: '#0275d8', marginRight: '25px'}}>Other</Link>
+                     */}
+          {/* </Nav> */}
+          <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" style={{marginBottom: '45px'}}>
+  <Tab eventKey="computers" title="Computers">
+    {/* <Sonnet /> */}
+  </Tab>
+  <Tab eventKey="tablets/phones" title="Tablets/Phone">
+    {/* <Sonnet /> */}
+  </Tab>
+  <Tab eventKey="parts" title="Parts">
+    {/* <Sonnet /> */}
+  </Tab>
+  <Tab eventKey="services" title="Services">
+    {/* <Sonnet /> */}
+  </Tab>
+  <Tab eventKey="other" title="Other">
+    {/* <Sonnet /> */}
+  </Tab>
+</Tabs>
+</Col>
+        </Row>
          <Row>
           <Col> 
         <CardColumns>
@@ -53,7 +89,7 @@ function AllItems() {
             );
           })}
         </CardColumns> 
-        <h1>test</h1>
+        <h1></h1>
          </Col>
         </Row>
       </Container>
