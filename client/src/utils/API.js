@@ -46,8 +46,8 @@ export const searchGoogleBooks = function (query) {
 //   return axios.put('/api/users', postData, { headers: { authorization: `Bearer ${token}` } });
 // };
 
-export const saveItem = function (itemData) {
-  return axios.post('/api/items', itemData);
+export const saveItem = function (itemData, token) {
+  return axios.post('/api/items', itemData, { headers: { authorization: `Bearer ${token}` } });
 };
 
 export const getAllItems = function () {
