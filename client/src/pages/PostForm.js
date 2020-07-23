@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route, useHistory } from 'react-router
 
 import UserInfoContext from '../utils/UserInfoContext';
 import AuthService from '../utils/auth';
-import  { saveItem }from '../utils/API';
+import { saveItem } from '../utils/API';
 import AllItems from './Card';
 
 
@@ -29,8 +29,14 @@ function BlankForm() {
     const handleSaveItem = (e) => {
         e.preventDefault();
 
+        const token = AuthService.loggedIn() ? AuthService.getToken() : null;
+
+        if (!token) {
+            return false;
+        }
+
         // send the item data to our api
-        saveItem(itemFormData).then(() => {
+        saveItem(itemFormData, token).then(() => {
             console.log(itemFormData);
             history.push('/')
         })
@@ -62,20 +68,20 @@ function BlankForm() {
 
                                 <Form.Group as={Col} controlId="exampleForm.ControlSelect1">
                                     <Form.Label>How would you categorize your item? *</Form.Label>
-                                    
-                                    <Form.Control 
+
+                                    <Form.Control
                                         as="select"
                                         name='category'
                                         value={itemFormData.category}
                                         onChange={handleInputChange}
                                         placeholder='Select a Category'
-                                        >
-                                            <option disabled></option>
-                                            <option>Computers</option>
-                                            <option>Tablets/Phones</option>
-                                            <option>Parts</option>
-                                            <option>Services</option>
-                                            <option>Other</option>
+                                    >
+                                        <option disabled></option>
+                                        <option>Computers</option>
+                                        <option>Tablets/Phones</option>
+                                        <option>Parts</option>
+                                        <option>Services</option>
+                                        <option>Other</option>
                                     </Form.Control>
                                 </Form.Group>
 
@@ -120,11 +126,11 @@ function BlankForm() {
                                     placeholder="Enter Price" />
                             </Form.Group> */}
                             <Form.Group>
-                            <Button
-                                variant="primary" type="submit">
-                                Submit
+                                <Button
+                                    variant="primary" type="submit">
+                                    Submit
                               </Button>
-                              </Form.Group>
+                            </Form.Group>
                             <Form.Text className="text-muted">
                                 *required fields
                             </Form.Text>

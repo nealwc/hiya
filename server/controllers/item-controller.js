@@ -1,5 +1,5 @@
 // import item router
-const { Item } = require('../models');
+const { Item, User } = require('../models');
 
 module.exports = {
     // get all items
@@ -10,10 +10,12 @@ module.exports = {
     // create an item
     async saveItem({ user, body }, res) {
         console.log(user);
+        body.user = user._id;
+        console.log(body)
         const item = await Item.create(body)
         .then(({ _id }) => User.findOneAndUpdate(
             { _id: user._id },
-            { $addToSet: { items: _id } },
+            { $push: { items: _id } },
             { new: true }))
         res.json(item);
     }
