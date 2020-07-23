@@ -18,6 +18,12 @@ module.exports = {
             { $push: { items: _id } },
             { new: true }))
         res.json(item);
+    },
+
+    async populateItems(req, res) {
+        const items = await Item.find()
+        .populate("user")
+        res.json(items);
     }
 }
 
