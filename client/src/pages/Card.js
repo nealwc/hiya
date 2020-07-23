@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Card, CardDeck, Row, Col, Container, CardColumns, Button, Tabs, Tab } from 'react-bootstrap';
+import moment from 'moment';
 
 // import context for global state
 import UserInfoContext from '../utils/UserInfoContext';
@@ -15,17 +16,26 @@ function AllItems() {
   const { username } = useContext(UserInfoContext);
 
   const [items, setItems] = useState([]);
-  const [filterItems, setFilterItems] = useState([]);
+  const [currentFilter, setCurrentFilter] = useState();
 
   useEffect(() => {
     loadItems()
-  }, [])
+  }, [currentFilter])
 
   function loadItems() {
     API.getAllItems()
-      .then(res =>
-        setItems(res.data)
-      )
+      .then(res => {
+        const sorted = res.data.sort((i1, i2) => moment(i2.date) - moment(i1.date))
+        if (currentFilter) {
+          const filteredItems = sorted.filter(item => {
+            return item.category === currentFilter
+          })
+          setItems(filteredItems)
+        }
+        else {
+        setItems(sorted)
+        }
+      })
     console.log(items)
   }
 
@@ -80,7 +90,7 @@ function AllItems() {
               {items.map((item) => {
                 return (
                   <Card border="primary" bg="dark" text="light" style={{ padding: "20px", margin: "20px" }}>
-                    <Card.Header style={{ fontSize: "25px" }}>{userData.username}
+                    <Card.Header style={{ fontSize: "25px" }}>{item.user.username}
                     </Card.Header>
                     <Card.Img variant="top" src="https://images.fineartamerica.com/images-medium-large-5/downtown-richmond-in-black-and-white-gordon-cain.jpg" />
                     <Card.Body>
