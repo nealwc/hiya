@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-// import SearchBooks from './pages/SearchBooks';
-// import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
 import Card from './pages/Card';
 import PostForm from './pages/PostForm';
-import Tabs from './components/Tabs'
 
 import * as API from './utils/API';
 import AuthService from './utils/auth';
@@ -15,7 +12,6 @@ import AuthService from './utils/auth';
 
 // import our context object for state
 import UserInfoContext from './utils/UserInfoContext';
-import Tabs1 from './components/Tabs';
 
 function App() {
   // set data to be used for UserInfoContext and make it available to all other components
@@ -47,17 +43,13 @@ function App() {
   },[]);
 
   return (
-    // <div styles={{backgroundImage:'url(${RVA})'}}>
     <Router>
       <>
         {/* wrap our entire app in context provider and provide userInfo state as value */}
         <UserInfoContext.Provider value={userInfo}>
           <Navbar />
-          {/* <Image src={RVA} style={{'width': '100%'}} /> */}
-          <Tabs1 />
           <Switch>
             <Route exact path='/postform' component={PostForm} />
-            
             <Route exact path='/' component={Card} />
             {/* <Route render={() => <h1 className='display-2'>Wrong page!</h1>} /> */}
           </Switch>
@@ -66,7 +58,6 @@ function App() {
         </UserInfoContext.Provider>
       </>
     </Router>
-    // </div>
   );
 }
 

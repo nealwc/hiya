@@ -1,28 +1,14 @@
-import React, { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container, Modal, Tabs, Tab, Image, Row, Col} from 'react-bootstrap';
-import SignUpForm from './SignupForm';
-import LoginForm from './LoginForm';
-// import Card from './Card';
-
+import React from 'react';
+import { Tabs, Tab, Row, Col } from 'react-bootstrap';
 import '../index.css';
 
-
-import UserInfoContext from '../utils/UserInfoContext';
-import AuthService from '../utils/auth';
-
-import Logo from '../utils/Photo/hiyadraft2fxd.png';
-
-function Tabs1() {
-    // set modal display state
-    const [showModal, setShowModal] = useState(false);
+function TabsBar(props) {
 
     return (
         <>
-        <Container>
             <Row className='categories'>
                 <Col>
-                    <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" style={{ marginBottom: '45px'}}>
+                    <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" style={{ marginBottom: '45px' }}>
                         <Tab
                             eventKey="all"
                             title="All">
@@ -31,7 +17,7 @@ function Tabs1() {
                             eventKey="computers"
                             title="Computers">
                         </Tab>
-                         <Tab
+                        <Tab
                             eventKey="tablets/phones"
                             title="Tablets/Phones">
                         </Tab>
@@ -43,16 +29,15 @@ function Tabs1() {
                             eventKey="services"
                             title="Services">
                         </Tab>
-                        <Tab 
+                        <Tab
                             eventKey="other"
                             title="Other">
                         </Tab>
-                </Tabs>
-            </Col>
-        </Row>
-    </Container>
-    </>
+                    </Tabs>
+                </Col>
+            </Row>
+        </>
     );
 }
 
-export default Tabs1;
+export default TabsBar;

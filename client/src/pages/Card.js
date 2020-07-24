@@ -1,20 +1,11 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { Card, CardDeck, Row, Col, Container, CardColumns, Button, Tabs, Tab } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { Card, Row, Col, Container, CardColumns } from 'react-bootstrap';
 import moment from 'moment';
-
-// import context for global state
-import UserInfoContext from '../utils/UserInfoContext';
+import TabsBar from '../components/Tabs'
 
 import * as API from '../utils/API';
-import AuthService from '../utils/auth';
 
 function AllItems() {
-  // get whole userData state object from App.js
-  const userData = useContext(UserInfoContext);
-
-  // get username out of context object to display in nav
-  const { username } = useContext(UserInfoContext);
-
   const [items, setItems] = useState([]);
   const [currentFilter, setCurrentFilter] = useState();
 
@@ -33,57 +24,16 @@ function AllItems() {
           setItems(filteredItems)
         }
         else {
-        setItems(sorted)
+          setItems(sorted)
         }
       })
     console.log(items)
   }
 
-
   return (
     <>
       <Container style={{ width: '100%' }}>
-        {/* <Row className='categories'>
-          <Col> */}
-            {/* <Nav className='categories'> */}
-            {/*                     
-                      <Link as={Link} to='/' style={{color: '#0275d8', marginRight: '25px'}}>Computers</Link>
-                    
-                    
-                      <Link as={Link} to='/' style={{color: '#0275d8', marginRight: '25px'}}>Tablets/Phones</Link>
-                    
-                    
-                      <Link as={Link} to='/' style={{color: '#0275d8', marginRight: '25px'}}>Parts</Link>
-                    
-                      <Link as={Link} to='/' style={{color: '#0275d8', marginRight: '25px'}}>Services</Link>
-                   
-                      <Link as={Link} to='/' style={{color: '#0275d8', marginRight: '25px'}}>Other</Link>
-                     */}
-            {/* </Nav> */}
-            {/* <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" style={{ marginBottom: '45px' }}>
-              <Tab
-                eventKey="computers"
-                title="Computers">
-              </Tab>
-              <Tab
-                eventKey="tablets/phones"
-                title="Tablets/Phone">
-              </Tab>
-              <Tab
-                eventKey="parts"
-                title="Parts">
-              </Tab>
-              <Tab
-                eventKey="services"
-                title="Services">
-              </Tab>
-              <Tab 
-                eventKey="other"
-                title="Other">
-              </Tab>
-            </Tabs>
-          </Col>
-        </Row> */}
+        <TabsBar />
         <Row>
           <Col>
             <CardColumns>
