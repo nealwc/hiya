@@ -22,27 +22,31 @@ function Tabs1() {
         <Container>
             <Row className='categories'>
                 <Col>
-                    <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" style={{ marginBottom: '45px' }}>
+                    <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" style={{ marginBottom: '45px'}}>
                         <Tab
-                        eventKey="computers"
-                        title="Computers">
-                    </Tab>
-                    <Tab
-                        eventKey="tablets/phones"
-                        title="Tablets/Phone">
-                    </Tab>
-                    <Tab
-                        eventKey="parts"
-                        title="Parts">
-                    </Tab>
-                    <Tab
-                        eventKey="services"
-                        title="Services">
-                    </Tab>
-                    <Tab 
-                        eventKey="other"
-                        title="Other">
-                    </Tab>
+                            eventKey="all"
+                            title="All">
+                        </Tab>
+                        <Tab
+                            eventKey="computers"
+                            title="Computers">
+                        </Tab>
+                         <Tab
+                            eventKey="tablets/phones"
+                            title="Tablets/Phones">
+                        </Tab>
+                        <Tab
+                            eventKey="parts"
+                            title="Parts">
+                        </Tab>
+                        <Tab
+                            eventKey="services"
+                            title="Services">
+                        </Tab>
+                        <Tab 
+                            eventKey="other"
+                            title="Other">
+                        </Tab>
                 </Tabs>
             </Col>
         </Row>
