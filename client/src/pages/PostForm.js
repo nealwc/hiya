@@ -49,7 +49,7 @@ function BlankForm() {
                     <Card.Header>Post an Item
             </Card.Header>
                     <Card.Body>
-                        <Form onSubmit={handleSaveItem}>
+                        <Form onSubmit={handleSaveItem} bg="dark" variant="dark">
                             <Form.Group>
                                 <Form.File id="exampleFormControlFile1" label="Add a photo!" />
                             </Form.Group>

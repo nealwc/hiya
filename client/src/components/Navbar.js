@@ -22,7 +22,7 @@ function AppNavbar() {
 
   return (
     <>
-      <Navbar  expand="lg"  style={{'outline': '2px solid #0275d8', marginBottom: '60px', backgroundImage: ''}} >
+      <Navbar bg="dark" variant="dark" expand="lg" sticky="top"  style={{'outline': '2px solid #0275d8', marginBottom: '60px', backgroundImage: ''}} >
       {/* bg="dark" variant="dark" expand="lg" sticky="top" style={{'outline': '2px solid #0275d8'}} */}
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
