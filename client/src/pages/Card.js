@@ -43,8 +43,8 @@ function AllItems() {
   return (
     <>
       <Container style={{ width: '100%' }}>
-        <Row className='categories'>
-          <Col>
+        {/* <Row className='categories'>
+          <Col> */}
             {/* <Nav className='categories'> */}
             {/*                     
                       <Link as={Link} to='/' style={{color: '#0275d8', marginRight: '25px'}}>Computers</Link>
@@ -60,7 +60,7 @@ function AllItems() {
                       <Link as={Link} to='/' style={{color: '#0275d8', marginRight: '25px'}}>Other</Link>
                      */}
             {/* </Nav> */}
-            <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" style={{ marginBottom: '45px' }}>
+            {/* <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" style={{ marginBottom: '45px' }}>
               <Tab
                 eventKey="computers"
                 title="Computers">
@@ -83,7 +83,7 @@ function AllItems() {
               </Tab>
             </Tabs>
           </Col>
-        </Row>
+        </Row> */}
         <Row>
           <Col>
             <CardColumns>
@@ -97,7 +97,7 @@ function AllItems() {
                       <Card.Title>{item.title}</Card.Title>
                       <Card.Text>Description: {item.description}</Card.Text>
                       <Card.Text>Price: ${item.price}</Card.Text>
-                      <a href={`mailto: ${userData.email}`} style={{ color: "white", fontSize: "45px" }}>&#9993;</a>
+                      <a href={`mailto: ${item.user.email}`} style={{ color: "white", fontSize: "45px" }}>&#9993;</a>
                     </Card.Body>
                   </Card>
                 );
