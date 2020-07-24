@@ -15,7 +15,10 @@ function TabsBar(props) {
                         </Tab>
                         <Tab
                             eventKey="computers"
-                            title="Computers">
+                            title="Computers"
+                            type="button"
+                            onClick={props.itemFilter}
+                            value="Computers">
                         </Tab>
                         <Tab
                             eventKey="tablets/phones"

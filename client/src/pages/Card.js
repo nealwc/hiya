@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Row, Col, Container, CardColumns } from 'react-bootstrap';
+import { Card, Row, Col, Container, CardColumns, Button } from 'react-bootstrap';
 import moment from 'moment';
 import TabsBar from '../components/Tabs'
 
@@ -29,10 +29,26 @@ function AllItems() {
       })
   }
 
+  const itemFilter = (event) => {
+    console.log("clicked!")
+    event.preventDefault();
+    const filterCategory = event.target.value
+    console.log(filterCategory)
+    setCurrentFilter(filterCategory)
+  }
+
   return (
     <>
       <Container style={{ width: '100%' }}>
-        <TabsBar />
+        <TabsBar
+          itemFilter={itemFilter} />
+        <Row>
+          <Button 
+            className="border-0 text-center"
+            variant="outline-primary"
+            value="Computers"
+            onClick={itemFilter}>Computers</Button>
+        </Row>
         <Row>
           <Col>
             <CardColumns>
