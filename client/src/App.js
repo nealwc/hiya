@@ -8,8 +8,6 @@ import PostForm from './pages/PostForm';
 import * as API from './utils/API';
 import AuthService from './utils/auth';
 
-
-
 // import our context object for state
 import UserInfoContext from './utils/UserInfoContext';
 

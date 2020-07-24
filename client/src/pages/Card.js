@@ -27,7 +27,6 @@ function AllItems() {
           setItems(sorted)
         }
       })
-    console.log(items)
   }
 
   return (
