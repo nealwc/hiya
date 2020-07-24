@@ -53,7 +53,6 @@ function AllItems() {
                 );
               })}
             </CardColumns>
-            <h1></h1>
           </Col>
         </Row>
       </Container>
