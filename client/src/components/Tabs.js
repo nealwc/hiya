@@ -56,7 +56,7 @@ function Tabs1() {
                         <Button 
                             // eventKey="other"
                             // title="Other"
-                            vat riant='link'
+                            variant='link'
                             >Other
                         </Button>
                 </ButtonGroup>
