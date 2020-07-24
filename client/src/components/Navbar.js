@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container, Modal, Tabs, Tab, Image} from 'react-bootstrap';
+import { Navbar, Nav, Container, Modal, Tab, Image} from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
 // import Card from './Card';
@@ -26,7 +26,6 @@ function AppNavbar() {
       {/* bg="dark" variant="dark" expand="lg" sticky="top" style={{'outline': '2px solid #0275d8'}} */}
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
-          {/* HIYA */}
           <Image src={Logo} rounded style={{'width': '200px'}} />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
@@ -35,30 +34,9 @@ function AppNavbar() {
               {/* if user is logged in show create a post and logout */}
               {username ? (
                 <>
-                  {/* <Nav className='categories'>
-                    <Nav.Item>
-                      <Nav.Link as={Link} to='/' style={{color: '#0275d8', marginRight: '25px'}}>Computers</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link as={Link} to='/' style={{color: '#0275d8', marginRight: '25px'}}>Tablets/Phones</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link as={Link} to='/' style={{color: '#0275d8', marginRight: '25px'}}>Parts</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link as={Link} to='/' style={{color: '#0275d8', marginRight: '25px'}}>Services</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link as={Link} to='/' style={{color: '#0275d8', marginRight: '25px'}}>Other</Nav.Link>
-                    </Nav.Item>
-                  </Nav> */}
                   <Nav.Link as={Link} to='/postform' style={{color: '#0275d8'}} id="create">
-                    <strong>Create a Post</strong>
+                    <strong>Post an Item</strong>
                   </Nav.Link>
-                  {/* <Nav.Link as={Link} to='/saved'>
-                    Saved Posts
-                  </Nav.Link> */}
-
                   <Nav.Link onClick={AuthService.logout} style={{color: '#0275d8'}} id="logout"><strong>Logout</strong></Nav.Link>
                 </>
               ) : (
