@@ -1,25 +1,11 @@
-import React, { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container, Modal, Tabs, Tab, Image, Row, Col, ButtonGroup, Button} from 'react-bootstrap';
-import SignUpForm from './SignupForm';
-import LoginForm from './LoginForm';
-// import Card from './Card';
-
+import React from 'react';
+import { ButtonGroup, Button, Row, Col } from 'react-bootstrap';
 import '../index.css';
 
-
-import UserInfoContext from '../utils/UserInfoContext';
-import AuthService from '../utils/auth';
-
-import Logo from '../utils/Photo/hiyadraft2fxd.png';
-
-function Tabs1() {
-    // set modal display state
-    const [showModal, setShowModal] = useState(false);
+function TabsBar(props) {
 
     return (
         <>
-        <Container>
             <Row className='categories'>
                 <Col>
                     <ButtonGroup defaultActiveKey="profile" id="categories" size='lg' variant='link' style={{ marginBottom: '45px'}}>
@@ -62,9 +48,41 @@ function Tabs1() {
                 </ButtonGroup>
             </Col>
         </Row>
-    </Container>
     </>
     );
+    //                 <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" style={{ marginBottom: '45px' }}>
+    //                     <Tab
+    //                         eventKey="all"
+    //                         title="All">
+    //                     </Tab>
+    //                     <Tab
+    //                         eventKey="computers"
+    //                         title="Computers"
+    //                         type="button"
+    //                         onClick={props.itemFilter}
+    //                         value="Computers">
+    //                     </Tab>
+    //                     <Tab
+    //                         eventKey="tablets/phones"
+    //                         title="Tablets/Phones">
+    //                     </Tab>
+    //                     <Tab
+    //                         eventKey="parts"
+    //                         title="Parts">
+    //                     </Tab>
+    //                     <Tab
+    //                         eventKey="services"
+    //                         title="Services">
+    //                     </Tab>
+    //                     <Tab
+    //                         eventKey="other"
+    //                         title="Other">
+    //                     </Tab>
+    //                 </Tabs>
+    //             </Col>
+    //         </Row>
+    //     </>
+    // );
 }
 
-export default Tabs1;
+export default TabsBar;
