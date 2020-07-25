@@ -54,6 +54,13 @@ h6 {
   font-family: 'Dosis', sans-serif;
 }
 
+#login {
+  font-size: 20px;
+  margin-left: 40px;
+  border-radius: 25px;
+  font-family: 'Dosis', sans-serif;
+}
+
 .categories {
   float: none;
  position: absolute;

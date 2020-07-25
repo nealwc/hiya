@@ -5,6 +5,8 @@ import TabsBar from '../components/Tabs'
 
 import * as API from '../utils/API';
 
+import Logo from '../utils/Photo/hiyadraft2fxd.png';
+
 function AllItems() {
   const [items, setItems] = useState([]);
   const [currentFilter, setCurrentFilter] = useState();
@@ -50,7 +52,7 @@ function AllItems() {
                   <Card border="primary" bg="dark" text="light" style={{ padding: "20px", margin: "20px" }}>
                     <Card.Header style={{ fontSize: "25px" }}>{item.user.username}
                     </Card.Header>
-                    <Card.Img variant="top" src="https://images.fineartamerica.com/images-medium-large-5/downtown-richmond-in-black-and-white-gordon-cain.jpg" />
+                    <Card.Img variant="top" src={Logo} />
                     <Card.Body>
                       <Card.Title>{item.title}</Card.Title>
                       <Card.Text>Description: {item.description}</Card.Text>
