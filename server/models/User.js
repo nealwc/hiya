@@ -4,9 +4,6 @@ const bcrypt = require('bcrypt');
 // import schema from Book.js
 const bookSchema = require('./Book');
 
-// import schema from Item.js
-// const itemSchema = require('./Item')
-
 const userSchema = new Schema(
   {
     username: {
@@ -32,9 +29,6 @@ const userSchema = new Schema(
         type: Schema.Types.ObjectId,
         ref: "Item"
       }
-    //   // {
-    //   //   type: String
-    //   // }
     ],
   },
   // set this to use virtual below
