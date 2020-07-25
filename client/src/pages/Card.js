@@ -43,13 +43,6 @@ function AllItems() {
         <TabsBar
           itemFilter={itemFilter} />
         <Row>
-          <Button 
-            className="border-0 text-center"
-            variant="outline-primary"
-            value="Computers"
-            onClick={itemFilter}>Computers</Button>
-        </Row>
-        <Row>
           <Col>
             <CardColumns>
               {items.map((item) => {
