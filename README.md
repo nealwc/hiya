@@ -1,10 +1,10 @@
-# hiyaTech
+# hiya-Tech
 
-hiyaTech is a full stack apllication that includes Node/Express/React/JWT which is deployed through heroku.
+hiya-Tech is a full stack apllication that includes Node/Express/React/JWT which is deployed through heroku.
 
 ## About
 
-hiyaTech is a website that allows user to buy and trade technology items without any issue. 
+hiya-Tech is a website that allows user to buy and trade technology items without any issue. 
 
 This website is best for a simple complex marketplace that shows users an image and descirption of the item that they are selling/trading. 
 
