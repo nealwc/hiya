@@ -10,39 +10,39 @@ function TabsBar(props) {
                 <Col>
                     <ButtonGroup defaultActiveKey="profile" id="categories" size='lg' variant='link' style={{ marginBottom: '45px'}}>
                         <Button
-                            // eventKey="all"
-                            // title="All"
                             variant='link'
+                            value=""
+                            onClick={props.itemFilter}
                             >All
                         </Button>
                         <Button
-                            // eventKey="computers"
-                            // title="Computers"
                             variant='link'
+                            value="Computers"
+                            onClick={props.itemFilter}
                             >Computers
                         </Button>
                          <Button
-                            // eventKey="tablets/phones"
-                            // title="Tablets/Phones"
                             variant='link'
+                            value="Tablets/Phones"
+                            onClick={props.itemFilter}
                             >Tablets/Phones
                         </Button>
                         <Button
-                            // eventKey="parts"
-                            // title="Parts"
                             variant='link'
+                            value="Parts"
+                            onClick={props.itemFilter}
                             >Parts
                         </Button>
                         <Button
-                            // eventKey="services"
-                            // title="Services"
                             variant='link'
+                            value="Services"
+                            onClick={props.itemFilter}
                             >Services
                         </Button>
                         <Button 
-                            // eventKey="other"
-                            // title="Other"
                             variant='link'
+                            value="Other"
+                            onClick={props.itemFilter}
                             >Other
                         </Button>
                 </ButtonGroup>
