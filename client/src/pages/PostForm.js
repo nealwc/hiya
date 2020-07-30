@@ -38,13 +38,13 @@ function BlankForm() {
     return (
         <>
             <Container>
-                <Card style={{ margin: "25px" }}>
-                    <Card.Header>Post an Item
+                <Card style={{ margin: "25px" }} id='postformcard'>
+                    <Card.Header id='posthead'><strong>Post an Item</strong>
             </Card.Header>
                     <Card.Body>
                         <Form onSubmit={handleSaveItem} bg="dark" variant="dark">
                             <Form.Group>
-                                <Form.File id="exampleFormControlFile1" label="Add a photo!" />
+                                <Form.File id="exampleFormControlFile1" label="Add a photo!" id='photobutton' />
                             </Form.Group>
                             <Form.Group controlId="formBasicTitle">
                                 <Form.Label>What would you like to offer? *</Form.Label>
@@ -96,7 +96,7 @@ function BlankForm() {
                                     Submit
                               </Button>
                             </Form.Group>
-                            <Form.Text className="text-muted">
+                            <Form.Text className="text-muted" style={{color: '#0275d8'}}>
                                 *required fields
                             </Form.Text>
                         </Form>

@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Form, Button, Alert } from 'react-bootstrap';
+import { Form, Button, Alert, Card } from 'react-bootstrap';
 
 import UserInfoContext from '../utils/UserInfoContext';
 import { createUser } from '../utils/API';
@@ -52,6 +52,7 @@ function SignupForm({ handleModalClose }) {
   return (
     <>
       {/* This is needed for the validation functionality above */}
+     
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         {/* show alert if server response is bad */}
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
@@ -99,10 +100,11 @@ function SignupForm({ handleModalClose }) {
         <Button
           disabled={!(userFormData.username && userFormData.email && userFormData.password)}
           type='submit'
-          variant='success'>
+          variant='primary'>
           Submit
         </Button>
       </Form>
+      
     </>
   );
 }

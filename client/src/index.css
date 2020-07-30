@@ -74,8 +74,26 @@ h6 {
  /* text-align: center; */
 }
 
-/* Form {
-  background-color:#666;
-  color: #FFF;
+Form {
+   background: #292b2c !important; 
+   color: #0275d8;
+   
+}
+
+#postformcard {
+  background-color: #292b2c;
+}
+
+/* text-area {
+  background-color: #292b2c;
+} */
+
+#posthead {
+  color: #0275d8;
+}
+
+/* #photobutton {
+  color: #0275d8;
+  background-color: #292b2c;
 } */
 
