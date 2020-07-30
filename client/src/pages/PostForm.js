@@ -62,8 +62,8 @@ function BlankForm() {
     return (
         <>
             <Container>
-                <Card style={{ margin: "25px" }}>
-                    <Card.Header>Post an Item
+                <Card style={{ margin: "25px" }} id='postformcard'>
+                    <Card.Header id='posthead'><strong>Post an Item</strong>
             </Card.Header>
                     <Card.Body>
                         <Form onSubmit={handleSaveItem} bg="dark" variant="dark">
@@ -126,7 +126,7 @@ function BlankForm() {
                                     Submit
                               </Button>
                             </Form.Group>
-                            <Form.Text className="text-muted">
+                            <Form.Text className="text-muted" style={{color: '#0275d8'}}>
                                 *required fields
                             </Form.Text>
                         </Form>

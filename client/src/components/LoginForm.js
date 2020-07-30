@@ -45,7 +45,7 @@ function LoginForm({ handleModalClose }) {
 
   return (
     <>
-      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+      <Form noValidate validated={validated} onSubmit={handleFormSubmit} id='loginform'>
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
           {errorText || 'Something went wrong with your login credentials!'}
         </Alert>
@@ -74,7 +74,7 @@ function LoginForm({ handleModalClose }) {
           />
           <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
         </Form.Group>
-        <Button disabled={!(userFormData.username && userFormData.password)} type='submit' variant='success'>
+        <Button disabled={!(userFormData.username && userFormData.password)} type='submit' variant='primary'>
           Submit
         </Button>
       </Form>
