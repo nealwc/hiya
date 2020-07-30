@@ -1,6 +1,10 @@
 const { Schema, model } = require('mongoose');
 
 const itemSchema = new Schema({
+    photo: {
+        type: String,
+        required: false,
+    },
     user: { 
         type: Schema.Types.ObjectId,
         ref: "User"

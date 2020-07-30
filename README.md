@@ -1,19 +1,16 @@
-# hiya-Tech
+# Hiya-tech
 
-hiya-Tech is a full stack apllication that includes Node/Express/React/JWT which is deployed through heroku.
+Hiya-tech is a MERN stack apllication that's deployed through heroku.
 
 ## About
 
-hiya-Tech is a website that allows user to buy and trade technology items without any issue. 
+Hiya-tech is a website that allows users to buy and trade technology items without any issue. 
 
-This website is best for a simple complex marketplace that shows users an image and descirption of the item that they are selling/trading. 
-
-If the user likes the item but doesnt have insignificant funds for the item then the user can use the save item button, which will save that 
-item into there "Saved Posts". Which is located on the navigation bar.
+This website is a practical marketplace where users can post an item to sell/trade or offer a services related to technology. We wanted to create a more specified service that would offer users a more focused experience than other sites such as Craigslist or Facebook Marketplace. 
 
 ## Deployment (Heroku)
 
-https://hiya-tech.herokuapp.com/ - Link to website
+[Hiya-tech](https://hiya-tech.herokuapp.com/)
 
 ## Usage
 
