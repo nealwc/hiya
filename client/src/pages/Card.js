@@ -52,7 +52,7 @@ function AllItems() {
                   <Card border="primary" bg="dark" text="light" style={{ padding: "20px", margin: "20px" }}>
                     <Card.Header style={{ fontSize: "25px" }}>{item.user.username}
                     </Card.Header>
-                    <Card.Img variant="top" src={Logo} />
+                    <Card.Img variant="top" src={item.photo} />
                     <Card.Body>
                       <Card.Title>{item.title}</Card.Title>
                       <Card.Text>Description: {item.description}</Card.Text>
