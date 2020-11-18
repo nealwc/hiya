@@ -5,7 +5,7 @@ import React from 'react';
 // we'll set all of this data in App.js and use it throughout other components!
 const UserInfoContext = React.createContext({
   items: [],
-  savedBooks: [],
+  // savedBooks: [],
   username: '',
   email: '',
   bookCount: 0,
