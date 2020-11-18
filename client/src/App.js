@@ -17,7 +17,6 @@ function App() {
     items: [],
     username: '',
     email: '',
-    bookCount: 0,
     // method to get user data after logging in
     getUserData: () => {
       // if user's logged in get the token or return null
@@ -27,8 +26,8 @@ function App() {
         return false;
       }
       API.getMe(token)
-        .then(({ data: { username, email, bookCount, items } }) =>
-          setUserInfo({ ...userInfo, username, email, bookCount, items })
+        .then(({ data: { username, email, items } }) =>
+          setUserInfo({ ...userInfo, username, email, items })
         )
         .catch((err) => console.log(err));
     },
