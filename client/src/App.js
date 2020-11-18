@@ -15,7 +15,7 @@ function App() {
   // set data to be used for UserInfoContext and make it available to all other components
   const [userInfo, setUserInfo] = useState({
     items: [],
-    savedBooks: [],
+    // savedBooks: [],
     username: '',
     email: '',
     bookCount: 0,
@@ -28,8 +28,12 @@ function App() {
         return false;
       }
       API.getMe(token)
-        .then(({ data: { username, email, savedBooks, bookCount, items } }) =>
-          setUserInfo({ ...userInfo, username, email, savedBooks, bookCount, items })
+        .then(({ data: { username, email, 
+          // savedBooks, 
+          bookCount, items } }) =>
+          setUserInfo({ ...userInfo, username, email, 
+            // savedBooks, 
+            bookCount, items })
         )
         .catch((err) => console.log(err));
     },
