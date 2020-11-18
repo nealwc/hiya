@@ -23,24 +23,24 @@ function BlankForm() {
         setItemFormData({ ...itemFormData, [name]: value })
     };
 
-    // const handleUploadImage = async e => {
-    //     const files = e.target.files
-    //     const data = new FormData();
-    //     data.append('file', files[0]);
-    //     data.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+    const handleUploadImage = async e => {
+        const files = e.target.files
+        const data = new FormData();
+        data.append('file', files[0]);
+        data.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
 
-    //     const res = await fetch(CLOUDINARY_URL,
-    //         {
-    //           method: 'POST',
-    //           body: data
-    //         }
-    //       );
+        const res = await fetch(CLOUDINARY_URL,
+            {
+              method: 'POST',
+              body: data
+            }
+          );
       
-    //       const file = await res.json();
+          const file = await res.json();
       
-    //       console.log(file);
+          console.log(file);
       
-    //       setItemFormData({ photo : file.secure_url });
+          setItemFormData({ photo : file.secure_url });
     // };
 
     // function to handle saving an item to our database
@@ -73,7 +73,7 @@ function BlankForm() {
                                 label="Add a photo!"
                                 name="image"
                                 type="file"
-                                // onChange={handleUploadImage}
+                                onChange={handleUploadImage}
                                 />
                             </Form.Group>
                             <Form.Group controlId="formBasicTitle">
