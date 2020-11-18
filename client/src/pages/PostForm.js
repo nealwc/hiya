@@ -41,7 +41,7 @@ function BlankForm() {
           console.log(file);
       
           setItemFormData({ photo : file.secure_url });
-    // };
+    };
 
     // function to handle saving an item to our database
     const handleSaveItem = (e) => {
